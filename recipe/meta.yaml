@@ -26,10 +26,12 @@ requirements:
     - poetry
     - plac
     - pyyaml
+    - dpath
   run:
     - python
     - plac
     - pyyaml
+    - dpath
 
 test:
   imports:
