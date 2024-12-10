@@ -10,7 +10,7 @@ source:
   sha256: 2c49831859f3216f313a17688900690872e05f8fbe77cb5d151bdb896357d57e
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
   entry_points:
@@ -24,12 +24,12 @@ requirements:
     - python >=3.7
     - pip
     - poetry
-    - plac
+    - plac >=1.2.0
     - pyyaml
     - dpath
   run:
     - python >=3.7
-    - plac
+    - plac >=1.2.0
     - pyyaml
     - dpath
 
