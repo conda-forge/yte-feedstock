@@ -1,13 +1,13 @@
 {% set name = "yte" %}
-{% set version = "1.5.4" %}
+{% set version = "1.5.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d2d77e53eafca74f58234fcd3fea28cc0a719e4f3784911511e35e86594bc880
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 2c49831859f3216f313a17688900690872e05f8fbe77cb5d151bdb896357d57e
 
 build:
   number: 0
