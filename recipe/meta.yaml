@@ -10,7 +10,7 @@ source:
   sha256: 2c49831859f3216f313a17688900690872e05f8fbe77cb5d151bdb896357d57e
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
   entry_points:
@@ -21,14 +21,15 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
+    - setuptools
     - poetry
     - plac
     - pyyaml
     - dpath
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - plac
     - pyyaml
     - dpath
@@ -38,6 +39,7 @@ test:
     - yte
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
     - yte --help
