@@ -1,5 +1,5 @@
 {% set name = "yte" %}
-{% set version = "1.5.6" %}
+{% set version = "1.5.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e92a2aaaf27a4ec426af7459f32874abf99c9368ca67f1c52f80b3fcd95708ea
+  sha256: 1e22a74e7c4d1aa70c54fe79d23938cb249d08c0804ad764ab97d5c587cbbad2
 
 build:
   number: 0
