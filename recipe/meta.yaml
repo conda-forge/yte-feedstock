@@ -21,14 +21,15 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
+    - setuptools
     - poetry
     - plac
     - pyyaml
     - dpath
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - plac
     - pyyaml
     - dpath
@@ -38,6 +39,7 @@ test:
     - yte
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
     - yte --help
