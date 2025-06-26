@@ -20,17 +20,17 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - uv-build
   host:
     - python >=3.7
     - pip
-    - poetry
-    - plac
+    - uv-build
+    - uv
+    - argparse-dataclass
     - pyyaml
     - dpath
   run:
     - python >=3.7
-    - plac
+    - argparse-dataclass
     - pyyaml
     - dpath
 
