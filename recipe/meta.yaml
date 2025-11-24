@@ -1,5 +1,5 @@
 {% set name = "yte" %}
-{% set version = "1.5.5" %}
+{% set version = "1.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2c49831859f3216f313a17688900690872e05f8fbe77cb5d151bdb896357d57e
+  sha256: 6eefbdceae56e156ba9881ecb63f3c9217cfe5d5cc6f85fdb061c266a8eff112
 
 build:
   number: 1
@@ -21,14 +21,15 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
+    - setuptools
     - poetry
     - plac >=1.2.0
     - pyyaml
     - dpath
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - plac >=1.2.0
     - pyyaml
     - dpath
@@ -38,6 +39,7 @@ test:
     - yte
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
     - yte --help
