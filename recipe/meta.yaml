@@ -25,12 +25,12 @@ requirements:
     - pip
     - setuptools
     - poetry
-    - plac
+    - plac >=1.2.0
     - pyyaml
     - dpath
   run:
     - python >={{ python_min }}
-    - plac
+    - plac >=1.2.0
     - pyyaml
     - dpath
 
