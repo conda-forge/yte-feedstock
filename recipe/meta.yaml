@@ -14,7 +14,7 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
   entry_points:
-    - yte = yte:main
+    - yte = yte.cli:main
 
 requirements:
   host:
